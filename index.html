@@ -180,8 +180,6 @@
 					$('.tips').addClass('hide');
 				}
 				if (!isMake) {
-					$('.letter').addClass('letterShow');
-					$('.picture').addClass('pictureShow');
 				}else{
 					$('.finish').removeClass('outIn');
 				}
@@ -206,15 +204,11 @@
 				console.log (diffL);
 				if (diffL > 0 && Math.abs(diffL) > 300) {
 					console.log('准备移动')
-					$('.letter').removeClass('letterShow');
-					$('.picture').removeClass('pictureShow');
 					$('.content'+inside).addClass('outRight');
 					$('.content'+outside).removeClass('hide').addClass('inLeft');
 				}
 				if (diffL < 0 && Math.abs(diffL) > 300) {
 					console.log('准备移动')
-					$('.letter').removeClass('letterShow');
-					$('.picture').removeClass('pictureShow');
 					$('.content'+inside).addClass('outLeft');
 					$('.content'+outside).removeClass('hide').addClass('inRight');
 				}
@@ -242,15 +236,12 @@
 	}
 	function make(){
 		if (!isMake) {
-			$('.letter').removeClass('letterShow');
-			$('.picture').removeClass('pictureShow');
 			$('.letter').addClass('letterOut');
 			$('.picture').addClass('pictureOut');
 			setTimeout(function(){
 				$('.letter').addClass('hide');
 				$('.picture').addClass('hide');
 				$('.makingPage').removeClass('hide');
-				$('.making').addClass('outIn');
 				canTouch = true;
 				setTimeout(function(){
 					$('.making').removeClass('making').addClass('finish');
