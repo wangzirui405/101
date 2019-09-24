@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=640, user-scalable=no">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="css.css">
+	<title></title>
+</head>
+<body>
+    <div class="backgroundM1">
+        <div class="mailBack"></div>
+        <div class="mailHeadP"></div>
+        <div class="content1 content">
+            <div id="textMake" class="letter">……</div>
+            <div class="picture">
+                <img id="imgGet">
+            </div>
+        </div>
+        <div class="mailFront"></div>
+    </div>
+    <div id="pictureGet" class="pictureGet">
+        <div class="tipsPictureGet">生成图片加载中<br/>请稍后(｀・ω・´)</div>
+        <div class="tipsSave hide">长按保存图片哟<br/>(｀・ω・´)</div>
+    </div>
+</canvas>
+<script type="text/javascript" src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    var allM = {
+        backgroundM:["backgroundM1","backgroundM2"],
+        changeM:["changeM1","changeM2"],
+        making:["making1","making2"],
+        finish:["finish1","finish2"],
+        letter:["letter1","letter2"],
+        mailFront:["mailFront1","mailFront2"],
+        mailHead:["mailHead1","mailHead2"],
+        picture:["picture1","picture2"],
+        mailBack:["mailBackDown1","mailBackDown2"],
+        fontColor:["color: #e3cb21;","color: #b7711b;"]
+    };
+    window.onload = function () {
+        var re = /"\n+"/i;
+        var str = decodeURIComponent(window.location.search);
+        var keyValues = str.slice(1).split("&");
+        var obj = {};
+        keyValues.forEach(function(keyValue){
+            var tempArr = keyValue.split("=");
+            var key = tempArr[0];
+            var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
+            obj[key] = value;
+        });
+        console.log(obj)
+        var text = obj.text;
+        var url = obj.img;
+        var nowM = parseInt(obj.nowM);
+        console.log(text)
+        console.log(url)
+        console.log(nowM)
+        $(".backgroundM1").attr('style', 'background: url(img/'+allM.backgroundM[nowM]+'.jpg) no-repeat;background-size: cover;background-position: center;');
+        $(".mailBack").attr('style', 'background: url(img/'+allM.mailBack[nowM]+'.png) no-repeat;background-size: contain;background-position: bottom;');
+        $(".mailHeadP").attr('style', 'background: url(img/'+allM.mailHead[nowM]+'.png) no-repeat;background-size: contain;');
+        $(".letter").attr('style', 'background: url(img/'+allM.letter[nowM]+'.jpg) no-repeat;background-size: contain;');
+        $(".picture").attr('style', 'background: url(img/'+allM.picture[nowM]+'.png) no-repeat;background-size: contain;');
+        $(".mailFront").attr('style', 'background: url(img/'+allM.mailFront[nowM]+'.png) no-repeat;background-size: contain;background-position: bottom;');
+        $('#imgGet').attr('src', url);
+        document.getElementById('textMake').innerHTML = text;
+        setTimeout(function(){
+            $('.tipsPictureGet').addClass('hide');
+            html2canvas(document.body,{
+                allowTaint: true,
+                taintTest: true,
+            }).then(function(canvas) {
+                    console.log(canvas);
+                    document.getElementById('pictureGet').appendChild(canvas);
+                })
+            $('.tipsSave').removeClass('hide');
+        },10000);
+    }
+</script>
+</body>
+</html>
