@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-	<meta name="viewport" content="width=640, user-scalable=no">
-	<meta http-equiv="Cache-Control" content="no-cache">
-	<meta name="apple-mobile-web-app-capable" content="yes">
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=640, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" type="text/css" href="css.css">
-	<title></title>
 </head>
 <body>
     <div id="container" class="backgroundM1">
@@ -28,7 +27,6 @@
 </canvas>
 <script type="text/javascript" src="//html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/src/dom-to-image.min.js"></script> -->
 <script>
     var allM = {
         backgroundM:["backgroundM1","backgroundM2"],
@@ -53,14 +51,15 @@
             var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
             obj[key] = value;
         });
-        console.log(obj)
+        // console.log(obj)
         var text = obj.text || '';
         var url = localStorage.getItem('img');
         if (url === 'undefined') url = ''
         var nowM = parseInt(obj.nowM || 0);
-        console.log(text)
-        console.log(url)
-        console.log(nowM)
+        // console.log(text)
+        // console.log(url)
+        // console.log(nowM)
+        
         // 判断背景图是否加载完成
         var imgs = []
         function pushImgs(key, type) {
@@ -98,70 +97,22 @@
             clearInterval(imgLoad)
             drawCanvas()
         }, 300)
-        function drawCanvas() {
-            // // 分设备
-            // if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-            //     // alert("IOS");
-            //     html2canvas(document.getElementById('container'), {
-            //         scale: 1
-            //     }).then(function (canvas) {
-            //         var image = new Image();
-            //         image.src = canvas.toDataURL("image/png");
-            //         image.style = 'position:fixed;left:0;top:0;z-index: 999;width: 100vw;height: 100vh;'
-            //         document.getElementById('pictureGet').appendChild(image);
-                    // $('.tipsPictureGet').addClass('hide');
-            //     });
-            // } else {
-            //     // alert("Android");
-            //     domtoimage.toPng(document.getElementById("container"))
-            //         .then(function (dataUrl) {
-            //             var image = new Image();
-            //             image.src = dataUrl
-            //             image.style = 'position:fixed;left:0;top:0;z-index: 999;width: 100vw;height: 100vh;'
-            //             document.getElementById('pictureGet').appendChild(image);
-                        // $('.tipsPictureGet').addClass('hide');
-            //         })
-            //         .catch(function (error) {
-            //             console.log(error)
-            //             alert('oops, something went wrong!', error);
-            //         });
-            // }
 
+        function drawCanvas() {
             html2canvas(document.getElementById('container'),{
                 allowTaint: true,
                 useCORS: true,
                 logging: true,
             }).then(function(canvas) {
-                    console.log(canvas);
-                    // document.getElementById('pictureGet').appendChild(canvas);
-                    // var mycanvas1=document.getElementsByTagName('canvas')[0];
-                    // console.log(mycanvas1);
+                    // console.log(canvas);
                     var image = new Image();
                     image.src = canvas.toDataURL("image/png");
                     image.style = 'position:fixed;left:0;top:0;z-index: 999;width: 100vw;height: 100vh;'
                     document.getElementById('pictureGet').appendChild(image);
-                    console.log(image);
+                    // console.log(image);
                     $('.tipsPictureGet').addClass('hide');
                 })
         }
-        // setTimeout(function(){
-        //     $('.tipsPictureGet').addClass('hide');
-        //     html2canvas(document.body,{
-        //         allowTaint: true,
-        //         useCORS: true,
-        //         logging: true,
-        //     }).then(function(canvas) {
-        //             console.log(canvas);
-        //             document.getElementById('pictureGet').appendChild(canvas);
-        //             var mycanvas1=document.getElementsByTagName('canvas')[0];
-        //             console.log(mycanvas1);
-        //             var image = new Image();
-        //             image.src = mycanvas1.toDataURL("image/png");
-        //             image.style = 'position:fixed;left:0;top:0;z-index: 999;width: 100vw;height: 100vh;'
-        //             document.getElementById('pictureGet').appendChild(image);
-        //             console.log(image);
-        //         })
-        // },10000);
     }
 </script>
 </body>
