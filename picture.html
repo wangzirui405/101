@@ -11,7 +11,7 @@
 	<title></title>
 </head>
 <body>
-    <div class="backgroundM1">
+    <div id="container" class="backgroundM1">
         <div class="mailBack"></div>
         <div class="mailHeadP"></div>
         <div class="content1 content">
@@ -26,8 +26,9 @@
         <div class="tipsPictureGet">生成图片加载中<br/>请稍后(｀・ω・´)</div>
     </div>
 </canvas>
-<script type="text/javascript" src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script type="text/javascript" src="//html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/src/dom-to-image.min.js"></script> -->
 <script>
     var allM = {
         backgroundM:["backgroundM1","backgroundM2"],
@@ -53,12 +54,32 @@
             obj[key] = value;
         });
         console.log(obj)
-        var text = obj.text;
+        var text = obj.text || '';
         var url = localStorage.getItem('img');
-        var nowM = parseInt(obj.nowM);
+        if (url === 'undefined') url = ''
+        var nowM = parseInt(obj.nowM || 0);
         console.log(text)
         console.log(url)
         console.log(nowM)
+        // 判断背景图是否加载完成
+        var imgs = []
+        function pushImgs(key, type) {
+            let img = new Image()
+            img.src = 'img/' + allM[key][nowM] + '.' + type
+            return img
+        }
+        imgs.push(pushImgs('backgroundM', 'jpg'))
+        imgs.push(pushImgs('mailBack', 'png'))
+        imgs.push(pushImgs('mailHead', 'png'))
+        imgs.push(pushImgs('letter', 'jpg'))
+        imgs.push(pushImgs('picture', 'png'))
+        imgs.push(pushImgs('mailFront', 'png'))
+        imgs.push((function () {
+            let img = new Image()
+            img.src = url || ''
+            return img
+        })())
+
         $(".backgroundM1").attr('style', 'background: url(img/'+allM.backgroundM[nowM]+'.jpg) no-repeat;background-size: cover;background-position: center;');
         $(".mailBack").attr('style', 'background: url(img/'+allM.mailBack[nowM]+'.png) no-repeat;background-size: contain;background-position: bottom;');
         $(".mailHeadP").attr('style', 'background: url(img/'+allM.mailHead[nowM]+'.png) no-repeat;background-size: contain;');
@@ -68,22 +89,79 @@
         $('#imgGet').attr('src', url);
         document.getElementById('textMake').innerHTML = text;
         //localStorage.removeItem('img');
-        setTimeout(function(){
-            $('.tipsPictureGet').addClass('hide');
-            html2canvas(document.body,{
+
+        // 判断背景图是否加载完成
+        let imgLoad = setInterval(() => {
+            for (let i = imgs.length; i--;) {
+                if (!imgs[i].complete) return
+            }
+            clearInterval(imgLoad)
+            drawCanvas()
+        }, 300)
+        function drawCanvas() {
+            // // 分设备
+            // if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            //     // alert("IOS");
+            //     html2canvas(document.getElementById('container'), {
+            //         scale: 1
+            //     }).then(function (canvas) {
+            //         var image = new Image();
+            //         image.src = canvas.toDataURL("image/png");
+            //         image.style = 'position:fixed;left:0;top:0;z-index: 999;width: 100vw;height: 100vh;'
+            //         document.getElementById('pictureGet').appendChild(image);
+                    // $('.tipsPictureGet').addClass('hide');
+            //     });
+            // } else {
+            //     // alert("Android");
+            //     domtoimage.toPng(document.getElementById("container"))
+            //         .then(function (dataUrl) {
+            //             var image = new Image();
+            //             image.src = dataUrl
+            //             image.style = 'position:fixed;left:0;top:0;z-index: 999;width: 100vw;height: 100vh;'
+            //             document.getElementById('pictureGet').appendChild(image);
+                        // $('.tipsPictureGet').addClass('hide');
+            //         })
+            //         .catch(function (error) {
+            //             console.log(error)
+            //             alert('oops, something went wrong!', error);
+            //         });
+            // }
+
+            html2canvas(document.getElementById('container'),{
                 allowTaint: true,
                 useCORS: true,
                 logging: true,
             }).then(function(canvas) {
                     console.log(canvas);
-                    document.getElementById('pictureGet').appendChild(canvas);
-                    var mycanvas1=document.getElementsByTagName('canvas')[0];
-                    console.log(mycanvas1);
+                    // document.getElementById('pictureGet').appendChild(canvas);
+                    // var mycanvas1=document.getElementsByTagName('canvas')[0];
+                    // console.log(mycanvas1);
                     var image = new Image();
-                    image.src = mycanvas1.toDataURL("image/png");
+                    image.src = canvas.toDataURL("image/png");
+                    image.style = 'position:fixed;left:0;top:0;z-index: 999;width: 100vw;height: 100vh;'
+                    document.getElementById('pictureGet').appendChild(image);
                     console.log(image);
+                    $('.tipsPictureGet').addClass('hide');
                 })
-        },10000);
+        }
+        // setTimeout(function(){
+        //     $('.tipsPictureGet').addClass('hide');
+        //     html2canvas(document.body,{
+        //         allowTaint: true,
+        //         useCORS: true,
+        //         logging: true,
+        //     }).then(function(canvas) {
+        //             console.log(canvas);
+        //             document.getElementById('pictureGet').appendChild(canvas);
+        //             var mycanvas1=document.getElementsByTagName('canvas')[0];
+        //             console.log(mycanvas1);
+        //             var image = new Image();
+        //             image.src = mycanvas1.toDataURL("image/png");
+        //             image.style = 'position:fixed;left:0;top:0;z-index: 999;width: 100vw;height: 100vh;'
+        //             document.getElementById('pictureGet').appendChild(image);
+        //             console.log(image);
+        //         })
+        // },10000);
     }
 </script>
 </body>
