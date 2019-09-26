@@ -29,10 +29,6 @@
 		</div>
 	</div>
 	<div class="box box3 hide">
-		<div class="background3">
-		</div>
-	</div>
-	<div class="box box4 hide">
 		<div class="background4">
 			<div class="sidecurtain"></div>
 			<div class="upcurtain"></div>
@@ -48,20 +44,20 @@
 			<div class="slide"></div>
 		</div>
 	</div>
-	<div class="box box5 hide">
+	<div class="box box4 hide">
 		<div class="backgroundM1">
 			<div class="mailBack"></div>
 			<div class="mailHead"></div>
 			<div class="content1 content hide">
 				<div class="letter letterShow">有一种骄傲是国旗红，有一种祝福是我为您描绘的华工蓝。是您，让我无惧潜学的寂寞和科研的挑战。谢谢您，祝您70岁生日快乐！</div>
 				<div class="picture pictureShow">
-					<img>
+					<img src="img/pictureM1.jpg">
 				</div>
 			</div>
 			<div class="content2 content hide">
 				<div class="letter letterShow">二乌尔都魏国强无敌群多无哥屋恩稳乌尔都魏国强无敌群多无哥屋恩稳乌尔都魏国强无敌群多无哥屋恩稳乌尔都魏国强无敌群多无哥屋恩稳乌尔都魏国强无敌群多无哥屋恩稳乌尔都魏国强无敌群多无哥屋恩稳乌尔都魏国强无敌群多无哥屋恩稳乌尔都魏国强无敌群多无哥屋恩</div>
 				<div class="picture pictureShow">
-					<img>
+					<img src="img/pictureM2.jpg">
 				</div>
 			</div>
 			<div class="makingPage hide">
@@ -175,7 +171,7 @@
 				curbox++;
 				$('.box' + curbox).removeClass('inTop outTop inDown outDown hide').addClass('inTop');
 			}
-			if (curbox == 5) {
+			if (curbox == 4) {
 				if (!isFirst) {
 					$('.tips').addClass('hide');
 				}
@@ -200,7 +196,7 @@
 				$('.box' + (curbox - 1) + ', .box' + (curbox + 1)).addClass('hide');
 			},1000);
 		}
-		if (curbox >= 5 && !isMake && canTouch) {
+		if (curbox >= 4 && !isMake && canTouch) {
 				console.log (diffL);
 				if (diffL > 0 && Math.abs(diffL) > 300) {
 					console.log('准备移动')
