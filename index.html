@@ -184,10 +184,6 @@
 				if (!isFirst) {
 					$('.tips').addClass('hide');
 				}
-				if (!isMake) {
-				}else{
-					$('.finish').removeClass('outIn');
-				}
 				if (!isWrite) {
 					$('.letterMaking').removeClass('hideWrite').addClass('letterShow');
 				}
@@ -280,7 +276,7 @@
 			console.log(document.getElementById('textWrite').value);
 			$('.writingPage').addClass('hide');
 			$('.changeM').addClass('zDown');
-			$('.letterMaking').removeClass('letterShow hide').addClass('hideWrite');
+			$('.letterMaking').removeClass('letterShow hide inWrite').addClass('hideWrite');
 			canTouch = true;
 			setTimeout(function(){
 				document.getElementById('textMake').innerHTML = document.getElementById('textWrite').value;
