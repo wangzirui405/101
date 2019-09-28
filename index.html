@@ -173,8 +173,8 @@
 				$('.box' + curbox).removeClass('inTop outTop inDown outDown hide').addClass('outTop');
 				curbox++;
 				$('.box' + curbox).removeClass('inTop outTop inDown outDown hide').addClass('inTop');
+				checkimgs(allPicture[curbox-1],curbox);
 			}
-			checkimgs(allPicture[curbox-1],curbox);
 			if (curbox == 4) {
 				if (!isFirst) {
 					$('.tips').addClass('hide');
@@ -202,13 +202,14 @@
 					console.log('准备移动')
 					$('.content'+inside).addClass('outRight');
 					$('.content'+outside).removeClass('hide').addClass('inLeft');
+					canTouch = false;
 				}
 				if (diffL < 0 && Math.abs(diffL) > 300) {
 					console.log('准备移动')
 					$('.content'+inside).addClass('outLeft');
 					$('.content'+outside).removeClass('hide').addClass('inRight');
+					canTouch = false;
 				}
-				canTouch = false;
 				if (Math.abs(diffL) > 300) {
 					setTimeout(function(){
 						diffL = 0;
@@ -221,7 +222,7 @@
 						outside = change;
 						console.log("里"+inside)
 						console.log("外"+outside)
-					},1500);
+					},500);
 				}
 			}
 	}
