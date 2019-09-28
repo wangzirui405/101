@@ -188,10 +188,6 @@
 				}
 				$('.making').addClass('pointNo hide');
 				$('.content'+inside).addClass('hide');
-				setTimeout(function(){
-					$('.making').removeClass('pointNo hide');
-					$('.content'+inside).removeClass('hide');
-				},2000);
 			}
 			canTouch = false;
 			setTimeout(function(){
@@ -375,6 +371,10 @@
 			case 4 :
 				$('.mailHead').addClass('mailHeadFlash');
 				$('.pictureLoad').addClass('hide');
+				setTimeout(function(){
+					$('.making').removeClass('pointNo hide');
+					$('.content'+inside).removeClass('hide');
+				},2000);
 			break
 			default :
 			return false;
