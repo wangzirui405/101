@@ -79,10 +79,11 @@
 		<div class="tips" onclick="tips();">左右滑动切换不同模板</div>
 	</div>
 	<div class="pictureLoad">
-		<div class="loadText">加载中</div>
-		<div class="ball ball1"></div>
-		<div class="ball ball2"></div>
-		<div class="ball ball3"></div>
+		<div id="loading">
+			<div class="load3">
+				<div class="loader"></div>
+			</div>
+		</div>
 	</div>
 <script type="text/javascript" src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
@@ -95,7 +96,7 @@
 	var outside = 2;
 	var isMake = false;
 	var isWrite = false;
-	var nowM = 0;
+	var nowM = 1;
 	var allM = {
 		backgroundM:["backgroundM1","backgroundM2"],
 		changeM:["changeM1","changeM2"],

@@ -20,15 +20,10 @@ html , body{
 .pictureLoad{
 	position: absolute;
 	z-index: 5;
-	width: 56vw;
-	padding-left: 22vw;
-	padding-right: 22vw;  
+	width: 100vw; 
 	height: 100vh;
-	background-color: #444;
 	display: flex;
 	-webkit-display: flex;
-	opacity:0.9;
-	filter:alpha(opacity=90);
 }
 .hide{
 	display:none;
@@ -354,14 +349,14 @@ html , body{
 .backgroundM1{
 	width: 100vw;
 	height: 100vh;
-	background: url(img/backgroundM1.jpg) no-repeat;
+	background: url(img/backgroundM2.jpg) no-repeat;
 	background-size: cover;
 	background-position: center;
 }
 .mailBack{
 	width: 100vw;
 	height: 100vh;
-	background: url(img/mailBackDown1.png) no-repeat;
+	background: url(img/mailBackDown2.png) no-repeat;
 	background-size: contain;
 	background-position: bottom;
 	position: absolute;
@@ -369,7 +364,7 @@ html , body{
 .mailFront{
 	width: 100vw;
 	height: 100vh;
-	background: url(img/mailFront1.png) no-repeat;
+	background: url(img/mailFront2.png) no-repeat;
 	background-size: contain;
 	background-position: bottom;
 	position: absolute;
@@ -378,7 +373,7 @@ html , body{
 	width: 100vw;
 	height: 43.51vw;
 	bottom: 25.3vw;
-	background: url(img/mailHead1.png) no-repeat;
+	background: url(img/mailHead2.png) no-repeat;
 	background-size: contain;
 	position: absolute;
 	transform-origin: top;
@@ -395,7 +390,7 @@ html , body{
 	width: 100vw;
 	height: 43.51vw;
 	bottom: 25.3vw;
-	background: url(img/mailHead1.png) no-repeat;
+	background: url(img/mailHead2.png) no-repeat;
 	background-size: contain;
 	position: absolute;
 	transform-origin: top;
@@ -409,7 +404,7 @@ html , body{
     height: 56.3vw;
     bottom: 15vh;
     left: 27vw;
-	background: url(img/picture1.png) no-repeat;
+	background: url(img/picture2.png) no-repeat;
 	transform-origin: left bottom;
 	-webkit-transform: rotate(-20.94deg);
 	-ms-transform: rotate(-20.94deg);
@@ -423,7 +418,7 @@ html , body{
     height: 56.3vw;
     bottom: 15vh;
     left: 27vw;
-	background: url(img/picture1.png) no-repeat;
+	background: url(img/picture2.png) no-repeat;
 	transform-origin: left bottom;
 	-webkit-transform: rotate(-20.94deg);
 	-ms-transform: rotate(-20.94deg);
@@ -486,7 +481,7 @@ html , body{
 	-ms-transform: rotate(10deg);
 	-o-transform: rotate(10deg);
 	transform: rotate(10deg);
-	background: url(img/letter1.jpg) no-repeat;
+	background: url(img/letter2.jpg) no-repeat;
 	background-size: contain;
 	position: absolute;
 }
@@ -508,7 +503,7 @@ html , body{
 	-ms-transform: rotate(10deg);
 	-o-transform: rotate(10deg);
 	transform: rotate(10deg);
-	background: url(img/letter1.jpg) no-repeat;
+	background: url(img/letter2.jpg) no-repeat;
 	background-size: contain;
 	position: absolute;
 }
@@ -522,7 +517,7 @@ html , body{
 	position: absolute;
 	left: 35vw;
 	bottom: 20vw;
-	background: url(img/making1.png) no-repeat;
+	background: url(img/making2.png) no-repeat;
 	width: 30vw;
 	height: 30vw;
 	background-size: contain;
@@ -531,7 +526,7 @@ html , body{
 	position: absolute;
 	left: 35vw;
 	bottom: 20vw;
-	background: url(img/finish1.png) no-repeat;
+	background: url(img/finish2.png) no-repeat;
 	width: 30vw;
 	height: 30vw;
 	background-size: contain;
@@ -585,7 +580,7 @@ html , body{
 	left: -10vw;
 	position: absolute;
 	z-index: 3;
-	background: url(img/letter1.jpg) no-repeat;
+	background: url(img/letter2.jpg) no-repeat;
 	background-size: contain;
 }
 .text{
@@ -620,7 +615,7 @@ html , body{
 	position: absolute;
 	left: 63vw;
     bottom: 103vw;
-	background: url(img/changeM1.png) no-repeat;
+	background: url(img/changeM2.png) no-repeat;
 	width: 30vw;
 	height: 12.21vw;
 	background-size: contain;
@@ -676,38 +671,90 @@ html , body{
 	-ms-user-select: none;   /*IE10*/
 	user-select: none;
 }
-.ball{
-	background-color: white;
-	border-radius: 100%;
-	width: 8vw;
-	height: 8vw;
-	margin-left:8vw; 
-	position: relative;
-	margin-top: 48vh;
-}
-.loadText{
-	color: #fff;
+/*加载*/
+#loading{
+	display: block;
+	z-index: 1000;
 	position: absolute;
-	top: 36vh;
-	left: 0vw;
 	width: 100vw;
-	text-align: center;
-	font-size: 10vw;
+	height: 100vh;
 }
-.ball1{
-	-webkit-animation:luffingBall 2s infinite linear;
-	animation:luffingBall 2s infinite linear;
-	animation-delay: .5s;
+#loadingAuto{
+	display: block;
+	z-index: 1000;
+	position: absolute;
+	width: 100vw;
+	height: 10000%;
 }
-.ball2{
-	-webkit-animation:luffingBall 2s infinite linear;
-	animation:luffingBall 2s infinite linear;
-	animation-delay: 1s;
+.load3{
+	position: absolute;
+	display: block;
+	width: 100vw;
+	height: 100%;
+	margin:0 auto;
+	background-color: rgb(129, 141, 158);
+	opacity:0.9;
+	filter:alpha(opacity=90);
+
 }
-.ball3{
-	-webkit-animation:luffingBall 2s infinite linear;
-	animation:luffingBall 2s infinite linear;
-	animation-delay: 1.5s;
+.load3 .loader {
+	font-size: 10px;
+	margin: 50% auto;
+	text-indent: -9999em;
+	width: 7em;
+	height: 7em;
+	border-radius: 50%;
+	background: #ffffff;
+    background: -webkit-linear-gradient(left, #ffffff 10%, #FFF 42%);
+    background: -o-linear-gradient(left, #ffffff 10%, #FFF 42%);
+    background: linear-gradient(to right, #ffffff 10%, #FFF 42%);
+	position: relative;
+	-webkit-animation: load3 1.4s infinite linear;
+	animation: load3 1.4s infinite linear;
+	margin-top: 40vh;
+}
+.load3 .loader:before {
+	width: 50%;
+	height: 50%;
+	background: rgb(129, 141, 158);
+	border-radius: 100% 0 0 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '';
+}
+.load3 .loader:after {
+	background: rgb(129, 141, 158);
+	width: 75%;
+	height: 75%;
+	border-radius: 50%;
+	content: '';
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+@-webkit-keyframes load3 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes load3 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
 @keyframes luffing{
 	0%{ margin-top: 0vh; }
