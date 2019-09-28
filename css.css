@@ -334,14 +334,14 @@ html , body{
 }
 .tips{
 	position: absolute;
-	width: 60vw;
+	width: 56vw;
 	background-color: #000;
 	color: #fff;
-	font-size: 10vw;
-	padding: 10vw;
+	font-size: 5vw;
+	padding: 12vw;
 	height: 30vw;
 	left: 10vw;
-	top: 50vw;
+	top: 46vw;
 	opacity:0.5;
 	filter:alpha(opacity=50);
 	text-align: center;
@@ -692,7 +692,7 @@ html , body{
 	width: 100vw;
 	height: 100%;
 	margin:0 auto;
-	background-color: rgb(129, 141, 158);
+	background-color: #000;
 	opacity:0.9;
 	filter:alpha(opacity=90);
 
@@ -716,7 +716,7 @@ html , body{
 .load3 .loader:before {
 	width: 50%;
 	height: 50%;
-	background: rgb(129, 141, 158);
+	background: #000;
 	border-radius: 100% 0 0 0;
 	position: absolute;
 	top: 0;
@@ -724,7 +724,7 @@ html , body{
 	content: '';
 }
 .load3 .loader:after {
-	background: rgb(129, 141, 158);
+	background: #000;
 	width: 75%;
 	height: 75%;
 	border-radius: 50%;
@@ -735,6 +735,15 @@ html , body{
 	left: 0;
 	bottom: 0;
 	right: 0;
+}
+.QRcode{
+	position: absolute;
+	width: 24vw;
+	height: 24vw;
+	top: 73vh;
+	left: 73vw;
+	background: url(img/QRcode.png) no-repeat;
+	background-size: cover;
 }
 @-webkit-keyframes load3 {
 	0% {

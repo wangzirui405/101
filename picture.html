@@ -20,6 +20,7 @@
             </div>
         </div>
         <div class="mailFront"></div>
+        <div class="QRcode"></div>
     </div>
     <div id="pictureGet" class="pictureGet">
         <div class="pictureLoad">
@@ -30,6 +31,7 @@
             </div>
         </div>
     </div>
+    <div class="tips hide" onclick="tips();" style="z-index: 1000;">长按图片保存丫<br/><br/><br/><span style="border: 1px #fff solid;padding: 5px;">好的，我知道啦</span></div>
 </canvas>
 <script type="text/javascript" src="//html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
@@ -88,10 +90,9 @@
         $(".backgroundM1").attr('style', 'background: url(img/'+allM.backgroundM[nowM]+'.jpg) no-repeat;background-size: cover;background-position: center;');
         $(".mailBack").attr('style', 'background: url(img/'+allM.mailBack[nowM]+'.png) no-repeat;background-size: contain;background-position: bottom;');
         $(".mailHeadP").attr('style', 'background: url(img/'+allM.mailHead[nowM]+'.png) no-repeat;background-size: contain;');
-        $(".letter").attr('style', 'background: url(img/'+allM.letter[nowM]+'.jpg) no-repeat;background-size: contain;');
+        $(".letter").attr('style', 'background: url(img/'+allM.letter[nowM]+'.jpg) no-repeat;background-size: contain;' + allM.fontColor[nowM]);
         $(".picture").attr('style', 'background: url(img/'+allM.picture[nowM]+'.png) no-repeat;background-size: contain;');
         $(".mailFront").attr('style', 'background: url(img/'+allM.mailFront[nowM]+'.png) no-repeat;background-size: contain;background-position: bottom;');
-        $("#textMake").attr('style',allM.fontColor[nowM]);
         $('#imgGet').attr('src', url);
         document.getElementById('textMake').innerHTML = text;
         //localStorage.removeItem('img');
@@ -118,7 +119,11 @@
                     document.getElementById('pictureGet').appendChild(image);
                     // console.log(image);
                     $('.pictureLoad').addClass('hide');
+                    $('.tips').removeClass('hide');
                 })
+        }
+        function tips() {
+            $('.tips').addClass('hide');
         }
     }
 </script>
