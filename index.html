@@ -85,7 +85,6 @@
 			</div>
 		</div>
 	</div>
-<script type="text/javascript" src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript">
 	var curbox = 1;
@@ -110,10 +109,10 @@
 		fontColor:["color: #e3cb21;","color: #b7711b;"]
 	};
 	var allPicture = [
-		['background1.jpg','title1.png','speakOfMao1.png','slide.png'],
-		['background2.jpg','mao.png','speakOfMao2.png','slide.png','speakBackground.png','flagpole.png','flag.png','soilders.png'],
-		['background4.jpg','xi.png','dream.png','slide.png','cloud1.png','cloud2.png','cloud3.png','cloud4.png','cloudNext.png','sidecurtain.png','upcurtain.png'],
-		['backgroundM1.jpg','changeM1.png','making1.png','finish1.png','letter1.jpg','mailFront1.png','mailHead1.png','picture1.png','mailBackDown1.png','backgroundM2.jpg','changeM2.png','making2.png','finish2.png','letter2.jpg','mailFront2.png','mailHead2.png','picture2.png','mailBackDown2.png']
+		'background1.jpg','title1.png','speakOfMao1.png','slide.png',
+		'background2.jpg','mao.png','speakOfMao2.png','slide.png','speakBackground.png','flagpole.png','flag.png','soilders.png',
+		'background4.jpg','xi.png','dream.png','slide.png','cloud1.png','cloud2.png','cloud3.png','cloud4.png','cloudNext.png','sidecurtain.png','upcurtain.png',
+		'backgroundM1.jpg','changeM1.png','making1.png','finish1.png','letter1.jpg','mailFront1.png','mailHead1.png','picture1.png','mailBackDown1.png','backgroundM2.jpg','changeM2.png','making2.png','finish2.png','letter2.jpg','mailFront2.png','mailHead2.png','picture2.png','mailBackDown2.png'
 	]
 	var textM = [
 		'今天是您的70岁生日，国旗升旗的那一刻，我的心情是无比激动，这份自豪和感动深深地融入在我的血液之中，同时我也想对您说，祖国母亲，我爱你！','每当我站在冉冉升起的国旗下，我的心就无法平静，正是您给予了我们奋进的力量，祝祖国母亲70岁快乐！'
@@ -136,7 +135,12 @@
 	    e.stopPropagation && e.stopPropagation();
 	    return false;
 	};
-	checkimgs(allPicture[0],1)
+	document.getElementById('loading').ontouchmove=function(e){
+	    e.preventDefault && e.preventDefault();
+	    e.stopPropagation && e.stopPropagation();
+	    return false;
+	};
+	checkimgs(allPicture,1)
 
 	function touchStart(e){
 		var touch = e.touches[0];
@@ -158,7 +162,7 @@
 	function touchEnd(e){
 		console.log("ok");
 		if(Math.abs(diff) > 150 && canTouch){
-			$('.pictureLoad').removeClass('hide');
+			
 			if(diff > 0){
 				if(curbox <= 1){
 					return;
@@ -174,7 +178,7 @@
 				$('.box' + curbox).removeClass('inTop outTop inDown outDown hide').addClass('outTop');
 				curbox++;
 				$('.box' + curbox).removeClass('inTop outTop inDown outDown hide').addClass('inTop');
-				checkimgs(allPicture[curbox-1],curbox);
+				showFlash(curbox);
 			}
 			if (curbox == 4) {
 				if (!isFirst) {
@@ -199,19 +203,19 @@
 		}
 		if (curbox >= 4 && !isMake && canTouch) {
 				console.log (diffL);
-				if (diffL > 0 && Math.abs(diffL) > 300) {
+				if (diffL > 0 && Math.abs(diffL) > 100) {
 					console.log('准备移动')
 					$('.content'+inside).addClass('outRight');
 					$('.content'+outside).removeClass('hide').addClass('inLeft');
 					canTouch = false;
 				}
-				if (diffL < 0 && Math.abs(diffL) > 300) {
+				if (diffL < 0 && Math.abs(diffL) > 100) {
 					console.log('准备移动')
 					$('.content'+inside).addClass('outLeft');
 					$('.content'+outside).removeClass('hide').addClass('inRight');
 					canTouch = false;
 				}
-				if (Math.abs(diffL) > 300) {
+				if (Math.abs(diffL) > 100) {
 					setTimeout(function(){
 						diffL = 0;
 						canTouch = true;

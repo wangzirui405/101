@@ -474,7 +474,7 @@ html , body{
 	padding-left: 15vw; 
 	line-height: 6.1vw;
 	font-size: 3vw;
-	color: #e3cb21;
+	color: #b7711b;
 	padding-right: 25vw;
 	transform-origin: left bottom;
 	-webkit-transform: rotate(10deg);
@@ -496,7 +496,7 @@ html , body{
 	padding-left: 15vw; 
 	line-height: 6.1vw;
 	font-size: 3vw;
-	color: #e3cb21;
+	color: #b7711b;
 	padding-right: 25vw;
 	transform-origin: left bottom;
 	-webkit-transform: rotate(10deg);
@@ -556,7 +556,7 @@ html , body{
 .outIn{
 }
 .writing{
-	width: 49vw;
+	width: 42vw;
 	height: 55vw;
 	bottom: 48vh;
 	left: 10vw;
@@ -592,7 +592,7 @@ html , body{
 	height: 100vw;
 	font-size: 9vw;
 	line-height: 10vw;
-	color: #e3cb21;
+	color: #b7711b;
 	z-index: 5;
 }
 .hideWriting{
