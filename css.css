@@ -17,7 +17,19 @@ html , body{
 	top:0;
 	overflow:hidden;
 }
-
+.pictureLoad{
+	position: absolute;
+	z-index: 5;
+	width: 56vw;
+	padding-left: 22vw;
+	padding-right: 22vw;  
+	height: 100vh;
+	background-color: #444;
+	display: flex;
+	-webkit-display: flex;
+	opacity:0.7;
+	filter:alpha(opacity=70);
+}
 .hide{
 	display:none;
 }
@@ -86,6 +98,8 @@ html , body{
 	width: 50vw;
 	height: 10vw;
 	background-size: contain;
+}
+.title1Flash{
 	-webkit-animation:into 1s;
 	animation:into 1s;
 }
@@ -97,6 +111,8 @@ html , body{
 	width: 80vw;
 	height: 40vw;
 	background-size: contain;
+}
+.speakOfMao1Flash{
 	-webkit-animation:into 3s;
 	animation:into 3s;
 }
@@ -108,6 +124,8 @@ html , body{
 	width: 10vw;
 	height: 10vw;
 	background-size: contain;
+}
+.slideFlash{
 	-webkit-animation:shining 1.5s infinite linear;
 	animation:shining 1.5s infinite linear;
 }
@@ -126,6 +144,8 @@ html , body{
 	width: 29vh;
 	height: 100vw;
 	background-size: contain;
+}
+.maoFlash{
 	-webkit-animation:showing 2s;
 	animation:showing 2s;
 }
@@ -137,6 +157,8 @@ html , body{
 	width: 48vw;
 	height: 20vw;
 	background-size: contain;
+}
+.speakBackgroundFlash{
 	-webkit-animation:showing 3s;
 	animation:showing 3s;
 }
@@ -148,6 +170,8 @@ html , body{
 	width: 48vw;
 	height: 20vw;
 	background-size: contain;
+}
+.speakOfMao2Flash{
 	-webkit-animation:showing 3.5s;
 	animation:showing 3.5s;
 }
@@ -159,6 +183,8 @@ html , body{
 	width: 20vw;
 	height: 60vw;
 	background-size: contain;
+}
+.flagpoleFlash{
 	-webkit-animation:showing 6s;
 	animation:showing 6s;
 }
@@ -170,8 +196,6 @@ html , body{
 	width: 28.5vh;
 	height: 45vw;
 	background-size: contain;
-	-webkit-animation:showing 6s;
-	animation:showing 6s;
 }
 .flag{
 	position: absolute;
@@ -181,6 +205,8 @@ html , body{
 	width: 29vw;
 	height: 30vw;
 	background-size: contain;
+}
+.flagFlash{
 	-webkit-animation:flagUp 12s;
 	animation:flagUp 12s;
 }
@@ -220,10 +246,12 @@ html , body{
 	width: 72vw;
 	height: 100vw;
 	background-size: contain;
+}
+.xiFlash{
 	-webkit-animation:showing 2s;
 	animation:showing 2s;
 }
-.cloud{
+.cloudFlash{
 	-webkit-animation:showing 2s;
 	animation:showing 2s;
 }
@@ -235,6 +263,8 @@ html , body{
 	width: 95vw;
 	height: 100vw;
 	background-size: contain;
+}
+.cloudNextFlash{
 	-webkit-animation:luffingCloud 1s infinite linear;
 	animation:luffingCloud 1s infinite linear;
 }
@@ -247,6 +277,8 @@ html , body{
 	height: 50vw;
 	background-size: contain;
 	background-position: bottom;
+}
+.cloud1Flash{
 	-webkit-animation:luffingCloud 4.5s infinite linear;
 	animation:luffingCloud 4.5s infinite linear;
 }
@@ -259,6 +291,8 @@ html , body{
 	height: 50vw;
 	background-size: contain;
 	background-position: bottom;
+}
+.cloud2Flash{
 	-webkit-animation:luffingCloud 2s infinite linear;
 	animation:luffingCloud 2s infinite linear;
 }
@@ -271,6 +305,8 @@ html , body{
 	height: 50vw;
 	background-size: contain;
 	background-position: bottom;
+}
+.cloud3Flash{
 	-webkit-animation:luffingCloud 6s infinite linear;
 	animation:luffingCloud 6s infinite linear;
 }
@@ -283,6 +319,8 @@ html , body{
 	height: 50vw;
 	background-size: contain;
 	background-position: bottom;
+}
+.cloud4Flash{
 	-webkit-animation:luffingCloud 8s infinite linear;
 	animation:luffingCloud 8s infinite linear;
 }
@@ -294,6 +332,8 @@ html , body{
 	width: 78vw;
 	height: 60vw;
 	background-size: contain;
+}
+.dreamFlash{
 	-webkit-animation:showing 4s;
 	animation:showing 4s;
 }
@@ -346,8 +386,10 @@ html , body{
 	-ms-transform: rotateX(-180deg);
 	-o-transform: rotateX(-180deg);
 	transform: rotateX(-180deg);
-	-webkit-animation:flipingS 4s;
-	animation:flipingS 4s;
+}
+.mailHeadFlash{
+	-webkit-animation:flipingS 1s;
+	animation:flipingS 1s;
 }
 .mailHeadP{
 	width: 100vw;
@@ -577,11 +619,16 @@ html , body{
 .changeM{
 	position: absolute;
 	left: 63vw;
-    bottom: 83vw;
+    bottom: 103vw;
 	background: url(img/changeM1.png) no-repeat;
 	width: 30vw;
-	height: 30vw;
+	height: 12.21vw;
 	background-size: contain;
+	transform-origin: left bottom;
+	-webkit-transform: rotate(69.46deg);
+	-ms-transform: rotate(69.46deg);
+	-o-transform: rotate(69.46deg);
+	transform: rotate(69.46deg);
 	z-index: 2;
 }
 .zDown{
@@ -629,22 +676,51 @@ html , body{
 	-ms-user-select: none;   /*IE10*/
 	user-select: none;
 }
-.pictureLoad{
-	position: absolute;
-	z-index: -5;
-	width: 100vw;
-	height: 100vh;
-	top: -300vh;
+.ball{
+	background-color: white;
+	border-radius: 100%;
+	width: 8vw;
+	height: 8vw;
+	margin-left:8vw; 
+	position: relative;
+	margin-top: 48vh;
 }
-.pictureLoad img{
+.loadText{
+	color: #fff;
+	position: absolute;
+	top: 36vh;
+	left: 0vw;
 	width: 100vw;
-	height: 20vw;
+	text-align: center;
+	font-size: 10vw;
+}
+.ball1{
+	-webkit-animation:luffingBall 2s infinite linear;
+	animation:luffingBall 2s infinite linear;
+	animation-delay: .5s;
+}
+.ball2{
+	-webkit-animation:luffingBall 2s infinite linear;
+	animation:luffingBall 2s infinite linear;
+	animation-delay: 1s;
+}
+.ball3{
+	-webkit-animation:luffingBall 2s infinite linear;
+	animation:luffingBall 2s infinite linear;
+	animation-delay: 1.5s;
 }
 @keyframes luffing{
 	0%{ margin-top: 0vh; }
 	40%{ margin-top: -1vh; }
 	60%{ margin-top: -1vh; }
 	100%{ margin-top: 0vh; }
+}
+@keyframes luffingBall{
+	0%{ margin-top: 48vh; }
+	40%{ margin-top: 48vh; }
+	50%{ margin-top: 44vh; }
+	60%{ margin-top: 48vh; }
+	100%{ margin-top: 48vh; }
 }
 @keyframes luffingCloud{
 	0%{ margin-bottom: 0vh; }

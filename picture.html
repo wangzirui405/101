@@ -22,7 +22,12 @@
         <div class="mailFront"></div>
     </div>
     <div id="pictureGet" class="pictureGet">
-        <div class="tipsPictureGet">生成图片加载中<br/>请稍后(｀・ω・´)</div>
+        <div class="pictureLoad">
+            <div class="loadText">加载中</div>
+            <div class="ball ball1"></div>
+            <div class="ball ball2"></div>
+            <div class="ball ball3"></div>
+        </div>
     </div>
 </canvas>
 <script type="text/javascript" src="//html2canvas.hertzen.com/dist/html2canvas.js"></script>
@@ -110,7 +115,7 @@
                     image.style = 'position:fixed;left:0;top:0;z-index: 999;width: 100vw;height: 100vh;'
                     document.getElementById('pictureGet').appendChild(image);
                     // console.log(image);
-                    $('.tipsPictureGet').addClass('hide');
+                    $('.pictureLoad').addClass('hide');
                 })
         }
     }

@@ -55,9 +55,9 @@
 				</div>
 			</div>
 			<div class="content2 content hide">
-				<div class="letter letterShow">二乌尔都魏国强无敌群多无哥屋恩稳乌尔都魏国强无敌群多无哥屋恩稳乌尔都魏国强无敌群多无哥屋恩稳乌尔都魏国强无敌群多无哥屋恩稳乌尔都魏国强无敌群多无哥屋恩稳乌尔都魏国强无敌群多无哥屋恩稳乌尔都魏国强无敌群多无哥屋恩稳乌尔都魏国强无敌群多无哥屋恩</div>
+				<div class="letter letterShow">70岁生日快乐！今天在电视上看了国庆阅兵仪式，内心中的自豪之情油然而生，真的非常激动！中国人民真的站起来了，中国不再是往日的东亚病夫，中国不再害怕国际上的强敌！祖国母亲，您是我的骄傲！</div>
 				<div class="picture pictureShow">
-					<img src="img/pictureM2.jpg">
+					<img src="img/pictureM3.jpg">
 				</div>
 			</div>
 			<div class="makingPage hide">
@@ -79,22 +79,10 @@
 		<div class="tips" onclick="tips();">左右滑动切换不同模板</div>
 	</div>
 	<div class="pictureLoad">
-		<img src="img/backgroundM2.jpg">
-		<img src="img/backgroundM1.jpg">
-		<img src="img/mailBackDown1.png">
-		<img src="img/mailBackDown2.png">
-		<img src="img/mailFront1.png">
-		<img src="img/mailFront2.png">
-		<img src="img/mailHead1.png">
-		<img src="img/mailHead2.png">
-		<img src="img/picture1.png">
-		<img src="img/picture2.png">
-		<img src="img/letter1.jpg">
-		<img src="img/letter2.jpg">
-		<img src="img/making1.png">
-		<img src="img/making2.png">
-		<img src="img/finish1.png">
-		<img src="img/finish2.png">
+		<div class="loadText">加载中</div>
+		<div class="ball ball1"></div>
+		<div class="ball ball2"></div>
+		<div class="ball ball3"></div>
 	</div>
 <script type="text/javascript" src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
@@ -120,6 +108,18 @@
 		mailBack:["mailBackDown1","mailBackDown2"],
 		fontColor:["color: #e3cb21;","color: #b7711b;"]
 	};
+	var allPicture = [
+		['background1.jpg','title1.png','speakOfMao1.png','slide.png'],
+		['background2.jpg','mao.png','speakOfMao2.png','slide.png','speakBackground.png','flagpole.png','flag.png','soilders.png'],
+		['background4.jpg','xi.png','dream.png','slide.png','cloud1.png','cloud2.png','cloud3.png','cloud4.png','cloudNext.png','sidecurtain.png','upcurtain.png'],
+		['backgroundM1.jpg','changeM1.png','making1.png','finish1.png','letter1.jpg','mailFront1.png','mailHead1.png','picture1.png','mailBackDown1.png','backgroundM2.jpg','changeM2.png','making2.png','finish2.png','letter2.jpg','mailFront2.png','mailHead2.png','picture2.png','mailBackDown2.png']
+	]
+	var textM = [
+		'今天是您的70岁生日，国旗升旗的那一刻，我的心情是无比激动，这份自豪和感动深深地融入在我的血液之中，同时我也想对您说，祖国母亲，我爱你！','每当我站在冉冉升起的国旗下，我的心就无法平静，正是您给予了我们奋进的力量，祝祖国母亲70岁快乐！'
+	]
+	var pictureM = [
+		'pictureM3.jpg','pictureM1.jpg','pictureM2.jpg'
+	]
 	console.log(allM);
 	if (localStorage.getItem('isFirst')) {
 		isFirst = false;
@@ -135,6 +135,8 @@
 	    e.stopPropagation && e.stopPropagation();
 	    return false;
 	};
+	checkimgs(allPicture[0],1)
+
 	function touchStart(e){
 		var touch = e.touches[0];
 		console.log(touch);
@@ -155,6 +157,7 @@
 	function touchEnd(e){
 		console.log("ok");
 		if(Math.abs(diff) > 150 && canTouch){
+			$('.pictureLoad').removeClass('hide');
 			if(diff > 0){
 				if(curbox <= 1){
 					return;
@@ -171,6 +174,7 @@
 				curbox++;
 				$('.box' + curbox).removeClass('inTop outTop inDown outDown hide').addClass('inTop');
 			}
+			checkimgs(allPicture[curbox-1],curbox);
 			if (curbox == 4) {
 				if (!isFirst) {
 					$('.tips').addClass('hide');
@@ -187,7 +191,7 @@
 				setTimeout(function(){
 					$('.making').removeClass('pointNo hide');
 					$('.content'+inside).removeClass('hide');
-				},4000);
+				},2000);
 			}
 			canTouch = false;
 			setTimeout(function(){
@@ -315,7 +319,67 @@
 		$(".finish").attr('style', 'background: url(img/'+allM.finish[nowM]+'.png) no-repeat;background-size: contain;')
 		$(".mailFront").attr('style', 'background: url(img/'+allM.mailFront[nowM]+'.png) no-repeat;background-size: contain;background-position: bottom;')
 		$(".changeM").attr('style', 'background: url(img/'+allM.changeM[nowM]+'.png) no-repeat;background-size: contain;')
+		var ran1 = Math.round(Math.random()); 
+		var ran2 = Math.round(Math.random()*2); 
+		document.getElementById('textMake').innerHTML = textM[ran1];
+		$('#pictureShow').attr('src', 'img/'+pictureM[ran2]); 
 	}
+	function pushImgs(src) {
+        let img = new Image()
+        img.src = 'img/' + src
+        return img
+    }
+    function checkimgs(imgArray,boxNum){
+    	var imgs = []
+    	for (var i = 0; i < imgArray.length; i++) {
+    		imgs.push(pushImgs(imgArray[i]))
+    	}
+	    let imgLoad = setInterval(() => {
+            for (let i = imgs.length; i--;) {
+                if (!imgs[i].complete) return
+            }
+            clearInterval(imgLoad)
+            showFlash(boxNum);
+        }, 300)
+    }
+    function showFlash(boxNum){
+		switch (boxNum) {
+			case 1 :
+				$('.title1').addClass('title1Flash');
+				$('.speakOfMao1').addClass('speakOfMao1Flash');
+				$('.slide').addClass('slideFlash');
+				$('.pictureLoad').addClass('hide');
+			break
+			case 2 :
+				$('.mao').addClass('maoFlash');
+				$('.speakBackground').addClass('speakBackgroundFlash');
+				$('.speakOfMao2').addClass('speakOfMao2Flash');
+				$('.flagpole').addClass('flagpoleFlash');
+				$('.soilders').addClass('flagpoleFlash');
+				$('.flag').addClass('flagFlash');
+				$('.slide').addClass('slideFlash');
+				$('.pictureLoad').addClass('hide');
+			break
+			case 3 :
+				$('.xi').addClass('xiFlash');
+				$('.cloud').addClass('cloudFlash');
+				$('.cloudNext').addClass('cloudNextFlash');
+				$('.cloud1').addClass('cloud1Flash');
+				$('.cloud2').addClass('cloud1Flash');
+				$('.cloud3').addClass('cloud1Flash');
+				$('.cloud4').addClass('cloud1Flash');
+				$('.dream').addClass('dreamFlash');
+				$('.slide').addClass('slideFlash');
+				$('.pictureLoad').addClass('hide');
+			break
+			case 4 :
+				$('.mailHead').addClass('mailHeadFlash');
+				$('.pictureLoad').addClass('hide');
+			break
+			default :
+			return false;
+    	}
+    }
 </script>
 </body>
 
