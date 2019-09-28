@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="tips hide" onclick="tips();" style="z-index: 1000;">长按图片保存丫<br/><br/><br/><span style="border: 1px #fff solid;padding: 5px;">好的，我知道啦</span></div>
+    <div class="tips hide" onclick="tips();" style="z-index: 1005;">长按图片保存丫<br/><br/><br/><span style="border: 1px #fff solid;padding: 5px;">好的，我知道啦</span></div>
 </canvas>
 <script type="text/javascript" src="//html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
@@ -48,6 +48,9 @@
         mailBack:["mailBackDown1","mailBackDown2"],
         fontColor:["color: #e3cb21;","color: #b7711b;"]
     };
+    function tips() {
+        $('.tips').addClass('hide');
+    }
     window.onload = function () {
         var re = /"\n+"/i;
         var str = decodeURIComponent(window.location.search);
@@ -86,6 +89,11 @@
             img.src = url || ''
             return img
         })())
+        imgs.push((function () {
+            let img = new Image()
+            img.src = 'img/QRcode.png'
+            return img
+        })())
 
         $(".backgroundM1").attr('style', 'background: url(img/'+allM.backgroundM[nowM]+'.jpg) no-repeat;background-size: cover;background-position: center;');
         $(".mailBack").attr('style', 'background: url(img/'+allM.mailBack[nowM]+'.png) no-repeat;background-size: contain;background-position: bottom;');
@@ -121,9 +129,6 @@
                     $('.pictureLoad').addClass('hide');
                     $('.tips').removeClass('hide');
                 })
-        }
-        function tips() {
-            $('.tips').addClass('hide');
         }
     }
 </script>

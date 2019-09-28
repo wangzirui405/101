@@ -173,15 +173,15 @@ html , body{
 .flagpole{
 	position: absolute;
 	left: 34.3vw;
-	top: 16vh;
+	top: 28vw;
 	background: url(img/flagpole.png) no-repeat;
 	width: 20vw;
 	height: 60vw;
 	background-size: contain;
 }
 .flagpoleFlash{
-	-webkit-animation:showing 6s;
-	animation:showing 6s;
+	-webkit-animation:showing 5s;
+	animation:showing 5s;
 }
 .soilders{
 	position: absolute;
@@ -195,15 +195,19 @@ html , body{
 .flag{
 	position: absolute;
 	left: 34.6vw;
-	top: 16vh;
+	top: 68vw;
 	background: url(img/flag.png) no-repeat;
 	width: 29vw;
-	height: 30vw;
+	height: 20vw;
 	background-size: contain;
 }
 .flagFlash{
-	-webkit-animation:flagUp 12s;
-	animation:flagUp 12s;
+	-webkit-animation:flagUp 5s;
+	animation:flagUp 5s;
+}
+.hideFlash{
+	-webkit-animation:hiding 1s;
+	animation:hiding 1s;
 }
 .background3{
 	width: 100vw;
@@ -843,6 +847,17 @@ html , body{
 		filter:alpha(opacity=100);
     }
 }
+@keyframes hiding{
+	0%{		
+		opacity:1;
+		filter:alpha(opacity=100);
+		
+	}
+    100%{
+		opacity:0;
+ 		filter:alpha(opacity=0);
+    }
+}
 @keyframes into{
 	0%{ margin-right: -100vw; }
 	50%{ margin-right: -100vw; }
@@ -880,20 +895,8 @@ html , body{
 }
 @keyframes flagUp{
 	0%{
-		opacity:0;
- 		filter:alpha(opacity=0);
  		margin-top:40vw;
 	}
-	40%{ 
-		opacity:0;
-		filter:alpha(opacity=0);
-		margin-top:40vw;
-	}
-    50%{
-		opacity:1;
-		filter:alpha(opacity=100);
-		margin-top:40vw;
-    }
     100%{
     	margin-top:0vw;
     }

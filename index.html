@@ -354,9 +354,21 @@
 				$('.speakOfMao2').addClass('speakOfMao2Flash');
 				$('.flagpole').addClass('flagpoleFlash');
 				$('.soilders').addClass('flagpoleFlash');
-				$('.flag').addClass('flagFlash');
+				$('.flag').addClass('flagpoleFlash');
 				$('.slide').addClass('slideFlash');
 				$('.pictureLoad').addClass('hide');
+				setTimeout(function(){
+					$('.mao').removeClass('maoFlash').addClass('hideFlash');
+					$('.speakBackground').removeClass('speakBackgroundFlash').addClass('hideFlash');
+					$('.speakOfMao2').removeClass('speakOfMao2Flash').addClass('hideFlash');
+					$('.soilders').removeClass('flagpoleFlash').addClass('hideFlash');
+					setTimeout(function(){
+						$('.mao').addClass('hide');
+						$('.speakBackground').addClass('hide');
+						$('.speakOfMao2').addClass('hide');
+						$('.soilders').addClass('hide');
+					},1000);
+				},6000);
 			break
 			case 3 :
 				$('.xi').addClass('xiFlash');
