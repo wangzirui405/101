@@ -120,10 +120,10 @@
 	var pictureM = [
 		'pictureM3.jpg','pictureM1.jpg','pictureM2.jpg'
 	]
-	console.log(allM);
+	// console.log(allM);
 	if (localStorage.getItem('isFirst')) {
 		isFirst = false;
-		console.log(isFirst);
+		// console.log(isFirst);
 	}
 	var startY , endY , diff;
 	var startX , endX , diffL;
@@ -144,11 +144,11 @@
 
 	function touchStart(e){
 		var touch = e.touches[0];
-		console.log(touch);
+		// console.log(touch);
 		startY = touch.clientY;
 		startX = touch.clientX;
-		console.log(startY);
-		console.log(startX);
+		// console.log(startY);
+		// console.log(startX);
 	}  
 	function touchMove(e){
 		var touch = e.touches[0];
@@ -156,11 +156,11 @@
 		diff = endY - startY;
 		endX = touch.clientX;
 		diffL = endX - startX;
-		console.log("竖"+diff);
-		console.log("平"+diffL);
+		// console.log("竖"+diff);
+		// console.log("平"+diffL);
 	}
 	function touchEnd(e){
-		console.log("ok");
+		// console.log("ok");
 		if(Math.abs(diff) > 150 && canTouch){
 			
 			if(diff > 0){
@@ -198,15 +198,15 @@
 			},1000);
 		}
 		if (curbox >= 4 && !isMake && canTouch) {
-				console.log (diffL);
+				// console.log (diffL);
 				if (diffL > 0 && Math.abs(diffL) > 100) {
-					console.log('准备移动')
+					// console.log('准备移动')
 					$('.content'+inside).addClass('outRight');
 					$('.content'+outside).removeClass('hide').addClass('inLeft');
 					canTouch = false;
 				}
 				if (diffL < 0 && Math.abs(diffL) > 100) {
-					console.log('准备移动')
+					// console.log('准备移动')
 					$('.content'+inside).addClass('outLeft');
 					$('.content'+outside).removeClass('hide').addClass('inRight');
 					canTouch = false;
@@ -221,14 +221,14 @@
 						change = inside;
 						inside = outside;
 						outside = change;
-						console.log("里"+inside)
-						console.log("外"+outside)
+						// console.log("里"+inside)
+						// console.log("外"+outside)
 					},500);
 				}
 			}
 	}
 	function tips(){
-		console.log("隐藏");
+		// console.log("隐藏");
 		$('.tips').addClass('hide');
 		localStorage.setItem("isFirst",1);
 	}
@@ -252,10 +252,10 @@
 		}
 	}
 	function writing(){
-		console.log('ok');
+		// console.log('ok');
 		isWrite = !isWrite;
 		if (isWrite) {
-			console.log('展开');
+			// console.log('展开');
 			$('.letterMaking').removeClass('letterShow hideWrite').addClass('inWrite');
 			document.getElementById('textMake').innerHTML = null;
 			$('.changeM').addClass('zDown');
@@ -268,12 +268,12 @@
 		}
 	}
 	function hideWriting(){
-		console.log('ok');
+		// console.log('ok');
 		isWrite = !isWrite;
 		if (!isWrite) {
-			console.log('隐藏');
-			console.log(document.getElementById('textMake').innerHTML);
-			console.log(document.getElementById('textWrite').value);
+			// console.log('隐藏');
+			// console.log(document.getElementById('textMake').innerHTML);
+			// console.log(document.getElementById('textWrite').value);
 			$('.writingPage').addClass('hide');
 			$('.changeM').addClass('zDown');
 			$('.letterMaking').removeClass('letterShow hide inWrite').addClass('hideWrite');
@@ -286,16 +286,16 @@
 	}
 	function uploads(fileDom) {
 		var reader = new FileReader()
-		console.log(fileDom)
-		console.log(fileDom.files)
-		console.log(fileDom.value)
+		// console.log(fileDom)
+		// console.log(fileDom.files)
+		// console.log(fileDom.value)
 		var file = fileDom.files[0]
 		var imageType = /^image\//
 		if (!imageType.test(file.type)) {
 			alert('请选择正确的图片~(｀・ω・´)')
 		} else {
 			reader.onload = function (e) {
-				console.log(e.target.result);
+				// console.log(e.target.result);
 				$('#pictureShow').attr('src', e.target.result ); 
 			}
 			reader.readAsDataURL(file)
@@ -303,7 +303,7 @@
 	}
 	function changeM(){
 		nowM = (nowM+1)%2;
-		console.log(nowM);
+		// console.log(nowM);
 		$(".backgroundM1").attr('style', 'background: url(img/'+allM.backgroundM[nowM]+'.jpg) no-repeat;background-size: cover;background-position: center;')
 		$(".mailBack").attr('style', 'background: url(img/'+allM.mailBack[nowM]+'.png) no-repeat;background-size: contain;background-position: bottom;')
 		$(".mailHead").attr('style', 'background: url(img/'+allM.mailHead[nowM]+'.png) no-repeat;background-size: contain;')

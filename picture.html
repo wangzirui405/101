@@ -21,6 +21,8 @@
         </div>
         <div class="mailFront"></div>
         <div class="QRcode"></div>
+        <div class="BBT"></div>
+        <div class="SCUT"></div>
     </div>
     <div id="pictureGet" class="pictureGet">
         <div class="pictureLoad">
@@ -94,6 +96,17 @@
             img.src = 'img/QRcode.png'
             return img
         })())
+        imgs.push((function () {
+            let img = new Image()
+            img.src = 'img/BBT.png'
+            return img
+        })())
+        imgs.push((function () {
+            let img = new Image()
+            img.src = 'img/SCUT.png'
+            return img
+        })())
+        // console.log(imgs)
 
         $(".backgroundM1").attr('style', 'background: url(img/'+allM.backgroundM[nowM]+'.jpg) no-repeat;background-size: cover;background-position: center;');
         $(".mailBack").attr('style', 'background: url(img/'+allM.mailBack[nowM]+'.png) no-repeat;background-size: contain;background-position: bottom;');

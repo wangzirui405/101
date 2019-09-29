@@ -749,6 +749,24 @@ html , body{
 	background: url(img/QRcode.png) no-repeat;
 	background-size: cover;
 }
+.SCUT{
+	position: absolute;
+	width: 15vw;
+	height: 15vw;
+	top: 77vh;
+	left: 5vw;
+	background: url(img/SCUT.png) no-repeat;
+	background-size: cover;
+}
+.BBT{
+	position: absolute;
+	width: 15vw;
+	height: 35vw;
+	top: 75vh;
+	left: 22vw;
+	background: url(img/BBT.png) no-repeat;
+	background-size: contain;
+}
 @-webkit-keyframes load3 {
 	0% {
 		-webkit-transform: rotate(0deg);
