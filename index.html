@@ -25,6 +25,8 @@
 			<div class="soilders"></div>
 			<div class="flag"></div>
 			<div class="mao"></div>
+			<div class="buttonForFlag hide" onclick="flagUp();">我为祖国助力</div>
+			<div class="title3 hide"></div>
 			<div class="slide"></div>
 		</div>
 	</div>
@@ -110,7 +112,7 @@
 	};
 	var allPicture = [
 		'background1.jpg','title1.png','speakOfMao1.png','slide.png',
-		'background2.jpg','mao.png','speakOfMao2.png','slide.png','speakBackground.png','flagpole.png','flag.png','soilders.png',
+		'background2.jpg','mao.png','speakOfMao2.png','slide.png','speakBackground.png','flagpole.png','flag.png','soilders.png','title3.png','buttonForFlag.png',
 		'background4.jpg','xi.png','dream.png','slide.png','cloud1.png','cloud2.png','cloud3.png','cloud4.png','cloudNext.png','sidecurtain.png','upcurtain.png',
 		'backgroundM1.jpg','changeM1.png','making1.png','finish1.png','letter1.jpg','mailFront1.png','mailHead1.png','picture1.png','mailBackDown1.png','backgroundM2.jpg','changeM2.png','making2.png','finish2.png','letter2.jpg','mailFront2.png','mailHead2.png','picture2.png','mailBackDown2.png'
 	]
@@ -227,6 +229,13 @@
 				}
 			}
 	}
+	function flagUp(){
+		$('.flag').removeClass('flagpoleFlash').addClass('flagFlash');
+		$('.flagpole').removeClass('flagpoleFlash');
+		setTimeout(function(){
+			$(".flag").attr('style', 'margin-top:-40vw;')
+		},4000);
+	}
 	function tips(){
 		// console.log("隐藏");
 		$('.tips').addClass('hide');
@@ -250,8 +259,8 @@
 			localStorage.setItem('img',$('#pictureShow').attr('src'));
 			$.post("http://boring.scut18pie1.top",{},function(data){
 				console.log(data);
+				window.location.href = 'picture.html?text=' + document.getElementById('textWrite').value + '&nowM=' + nowM
 			});
-			window.location.href = 'picture.html?text=' + document.getElementById('textWrite').value + '&nowM=' + nowM
 		}
 	}
 	function writing(){
@@ -358,7 +367,7 @@
 				$('.speakOfMao2').addClass('speakOfMao2Flash');
 				$('.flagpole').addClass('flagpoleFlash');
 				$('.soilders').addClass('flagpoleFlash');
-				$('.flag').addClass('flagpoleFlash');
+				$('.flag').removeClass('flagFlash').addClass('flagpoleFlash');
 				$('.slide').addClass('slideFlash');
 				$('.pictureLoad').addClass('hide');
 				setTimeout(function(){
@@ -366,6 +375,8 @@
 					$('.speakBackground').removeClass('speakBackgroundFlash').addClass('hideFlash');
 					$('.speakOfMao2').removeClass('speakOfMao2Flash').addClass('hideFlash');
 					$('.soilders').removeClass('flagpoleFlash').addClass('hideFlash');
+					$('.buttonForFlag').removeClass('hide').addClass('buttonForFlagFlash');
+					$('.title3').removeClass('hide').addClass('buttonForFlagFlash');
 					setTimeout(function(){
 						$('.mao').addClass('hide');
 						$('.speakBackground').addClass('hide');

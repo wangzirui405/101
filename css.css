@@ -146,10 +146,10 @@ html , body{
 }
 .speakBackground{
 	position: absolute;
-	left: 5vw;
+	left: 3vw;
 	top: 61vh;
 	background: url(img/speakBackground.png) no-repeat;
-	width: 48vw;
+	width: 52vw;
 	height: 20vw;
 	background-size: contain;
 }
@@ -202,8 +202,8 @@ html , body{
 	background-size: contain;
 }
 .flagFlash{
-	-webkit-animation:flagUp 5s;
-	animation:flagUp 5s;
+	-webkit-animation:flagUp 4s;
+	animation:flagUp 4s;
 }
 .hideFlash{
 	-webkit-animation:hiding 1s;
@@ -742,17 +742,17 @@ html , body{
 }
 .QRcode{
 	position: absolute;
-	width: 24vw;
-	height: 24vw;
-	top: 73vh;
-	left: 73vw;
+	width: 22vw;
+    height: 22vw;
+    top: 73.5vh;
+    left: 73.5vw;
 	background: url(img/QRcode.png) no-repeat;
 	background-size: cover;
 }
 .SCUT{
 	position: absolute;
-	width: 15vw;
-	height: 15vw;
+	width: 14vw;
+	height: 14vw;
 	top: 77vh;
 	left: 5vw;
 	background: url(img/SCUT.png) no-repeat;
@@ -760,10 +760,10 @@ html , body{
 }
 .BBT{
 	position: absolute;
-	width: 15vw;
-	height: 35vw;
-	top: 75vh;
-	left: 22vw;
+	width: 13vw;
+    height: 24vw;
+    top: 76vh;
+    left: 22vw;
 	background: url(img/BBT.png) no-repeat;
 	background-size: contain;
 }
@@ -787,6 +787,37 @@ html , body{
     color: #a0201b;
     text-align: center;
     width: 100vw;
+}
+.buttonForFlag{
+	position: absolute;
+    right: 30vw;
+    top: 52vh;
+    background: url(img/buttonForFlag.png) no-repeat;
+    width: 20vw;
+    height: 10vw;
+    background-size: contain;
+    color: #951c14;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-bottom: 15vw;
+    padding-top: 15vw;
+    font-size: 3vw;
+    font-weight: bold;
+    text-align: center;
+    line-height: 9vw;
+}
+.buttonForFlagFlash{
+	-webkit-animation:showing 2s;
+	animation:showing 2s;
+}
+.title3{
+	position: absolute;
+    right: 10vw;
+    top: 52vh;
+    background: url(img/title3.png) no-repeat;
+    width: 80vw;
+    height: 20vw;
+    background-size: contain;
 }
 @-webkit-keyframes load3 {
 	0% {
@@ -934,10 +965,10 @@ html , body{
 }
 @keyframes flagUp{
 	0%{
- 		margin-top:40vw;
+ 		margin-top:0vw;
 	}
     100%{
-    	margin-top:0vw;
+    	margin-top:-40vw;
     }
 }
 @keyframes flipingS{
