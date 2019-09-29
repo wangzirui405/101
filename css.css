@@ -767,6 +767,27 @@ html , body{
 	background: url(img/BBT.png) no-repeat;
 	background-size: contain;
 }
+.titleBox{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.title2{
+	position: absolute;
+	width: 80vw;
+	height: 23vw;
+	background: url(img/title2.png) no-repeat;
+	background-size: contain;
+	left: 10vw;
+	top: 0;
+}
+.number{
+	font-size: 18vw;
+    line-height: 28vw;
+    color: #a0201b;
+    text-align: center;
+    width: 100vw;
+}
 @-webkit-keyframes load3 {
 	0% {
 		-webkit-transform: rotate(0deg);
