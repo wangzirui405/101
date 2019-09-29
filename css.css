@@ -160,7 +160,7 @@ html , body{
 .speakOfMao2{
 	position: absolute;
 	left: 5vw;
-	top: 61.8vh;
+	top: 62.2vh;
 	background: url(img/speakOfMao2.png) no-repeat;
 	width: 48vw;
 	height: 20vw;
@@ -406,7 +406,7 @@ html , body{
 .picture{
 	width: 78vw;
     height: 56.3vw;
-    bottom: 15vh;
+    bottom: 14vh;
     left: 27vw;
 	background: url(img/picture2.png) no-repeat;
 	transform-origin: left bottom;
@@ -420,7 +420,7 @@ html , body{
 .pictureMaking{
 	width: 78vw;
     height: 56.3vw;
-    bottom: 15vh;
+    bottom: 14vh;
     left: 27vw;
 	background: url(img/picture2.png) no-repeat;
 	transform-origin: left bottom;
@@ -456,7 +456,7 @@ html , body{
     height: 52.3vw;
 	padding: 2vw;
 	position: absolute;
-	bottom: 15vh;
+	bottom: 14vh;
     left: 27vw;
     transform-origin: left bottom;
 	-webkit-transform: rotate(-20.94deg);
@@ -470,7 +470,7 @@ html , body{
 .letter{
 	width: 42vw;
 	height: 55vw;
-	bottom: 48vh;
+	bottom: 46vh;
 	left: 10vw;
 	padding-top: 20vw;
 	padding-bottom: 15vw;
@@ -492,7 +492,7 @@ html , body{
 .letterMaking{
 	width: 42vw;
 	height: 55vw;
-	bottom: 48vh;
+	bottom: 46vh;
 	left: 10vw;
 	padding-top: 20vw;
 	padding-bottom: 15vw;
@@ -562,7 +562,7 @@ html , body{
 .writing{
 	width: 42vw;
 	height: 55vw;
-	bottom: 48vh;
+	bottom: 46vh;
 	left: 10vw;
 	padding-top: 20vw;
 	padding-bottom: 15vw;
@@ -774,16 +774,16 @@ html , body{
 }
 .title2{
 	position: absolute;
-	width: 80vw;
-	height: 23vw;
+	width: 75vw;
+	height: 21vw;
 	background: url(img/title2.png) no-repeat;
 	background-size: contain;
-	left: 10vw;
+	left: 12.5vw;
 	top: 0;
 }
 .number{
-	font-size: 18vw;
-    line-height: 28vw;
+	font-size: 16vw;
+    line-height: 25vw;
     color: #a0201b;
     text-align: center;
     width: 100vw;

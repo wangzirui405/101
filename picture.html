@@ -137,7 +137,10 @@
                 if (!imgs[i].complete) return
             }
             clearInterval(imgLoad)
-            drawCanvas()
+            setTimeout(function(){
+                drawCanvas()
+            },1000);
+            
         }, 300)
 
         function drawCanvas() {
