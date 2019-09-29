@@ -763,7 +763,7 @@ html , body{
 	width: 13vw;
     height: 24vw;
     top: 76vh;
-    left: 12vw;
+    left: 10vw;
 	background: url(img/BBT.png) no-repeat;
 	background-size: contain;
 }
@@ -771,16 +771,17 @@ html , body{
 	position: absolute;
 	left: 0;
 	top: 0;
+	width: 100vw;
+	height: 20vh;
 }
 .title2{
-	position: absolute;
+	position: relative;
+	float: right;
 	width: 75vw;
 	height: 21vw;
 	font-size: 4vw;
 	text-align: center;
     color: #a0201b;
-    left: 0;
-	top: 0;
 }
 .number{
 	font-size: 7vw;
