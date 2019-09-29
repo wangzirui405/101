@@ -812,8 +812,8 @@ html , body{
 }
 .title3{
 	position: absolute;
-    right: 10vw;
-    top: 52vh;
+    right: 0vw;
+    top: 72vh;
     background: url(img/title3.png) no-repeat;
     width: 80vw;
     height: 20vw;
