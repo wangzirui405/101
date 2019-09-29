@@ -22,10 +22,8 @@
         <div class="mailFront"></div>
         <div class="QRcode"></div>
         <div class="BBT"></div>
-        <div class="SCUT"></div>
         <div class="titleBox">
-           <div class="title2"></div>
-           <div id="number" class="number">99</div>
+           <div class="title2">我是第<span id="number" class="number">99</span>位华工青年，我为祖国庆生</div>
         </div>
     </div>
     <div id="pictureGet" class="pictureGet">
@@ -109,16 +107,6 @@
             img.src = 'img/BBT.png'
             return img
         })())
-        imgs.push((function () {
-            let img = new Image()
-            img.src = 'img/SCUT.png'
-            return img
-        })())
-        imgs.push((function () {
-            let img = new Image()
-            img.src = 'img/title2.png'
-            return img
-        })())
         // console.log(imgs)
 
         $(".backgroundM1").attr('style', 'background: url(img/'+allM.backgroundM[nowM]+'.jpg) no-repeat;background-size: cover;background-position: center;');
@@ -139,7 +127,7 @@
             clearInterval(imgLoad)
             setTimeout(function(){
                 drawCanvas()
-            },1000);
+            },500);
             
         }, 300)
 

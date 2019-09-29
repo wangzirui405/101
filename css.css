@@ -742,10 +742,10 @@ html , body{
 }
 .QRcode{
 	position: absolute;
-	width: 22vw;
-    height: 22vw;
-    top: 73.5vh;
-    left: 73.5vw;
+	width: 20vw;
+    height: 20vw;
+    top: 74vh;
+    left: 74vw;
 	background: url(img/QRcode.png) no-repeat;
 	background-size: cover;
 }
@@ -763,7 +763,7 @@ html , body{
 	width: 13vw;
     height: 24vw;
     top: 76vh;
-    left: 22vw;
+    left: 12vw;
 	background: url(img/BBT.png) no-repeat;
 	background-size: contain;
 }
@@ -776,14 +776,14 @@ html , body{
 	position: absolute;
 	width: 75vw;
 	height: 21vw;
-	background: url(img/title2.png) no-repeat;
-	background-size: contain;
-	left: 12.5vw;
+	font-size: 4vw;
+	text-align: center;
+    color: #a0201b;
+    left: 0;
 	top: 0;
 }
 .number{
-	font-size: 16vw;
-    line-height: 25vw;
+	font-size: 7vw;
     color: #a0201b;
     text-align: center;
     width: 100vw;
