@@ -90,8 +90,8 @@ html , body{
 	right: 10vw;
 	top: 15vh;
 	background: url(img/title1.png) no-repeat;
-	width: 50vw;
-	height: 10vw;
+	width: 54vw;
+	height: 15vw;
 	background-size: contain;
 }
 .title1Flash{
@@ -141,8 +141,8 @@ html , body{
 	background-size: contain;
 }
 .maoFlash{
-	-webkit-animation:showing 2s;
-	animation:showing 2s;
+	-webkit-animation:showing 4s;
+	animation:showing 4s;
 }
 .speakBackground{
 	position: absolute;
@@ -154,8 +154,8 @@ html , body{
 	background-size: contain;
 }
 .speakBackgroundFlash{
-	-webkit-animation:showing 3s;
-	animation:showing 3s;
+	-webkit-animation:showing 4.5s;
+	animation:showing 4.5s;
 }
 .speakOfMao2{
 	position: absolute;
@@ -167,8 +167,8 @@ html , body{
 	background-size: contain;
 }
 .speakOfMao2Flash{
-	-webkit-animation:showing 3.5s;
-	animation:showing 3.5s;
+	-webkit-animation:showing 5s;
+	animation:showing 5s;
 }
 .flagpole{
 	position: absolute;
@@ -180,8 +180,8 @@ html , body{
 	background-size: contain;
 }
 .flagpoleFlash{
-	-webkit-animation:showing 5s;
-	animation:showing 5s;
+	-webkit-animation:showing 3s;
+	animation:showing 3s;
 }
 .soilders{
 	position: absolute;
@@ -191,6 +191,10 @@ html , body{
 	width: 28.5vh;
 	height: 45vw;
 	background-size: contain;
+}
+.soildersFlash{
+	-webkit-animation:showing 2s;
+	animation:showing 2s;
 }
 .flag{
 	position: absolute;
@@ -206,8 +210,8 @@ html , body{
 	animation:flagUp 4s;
 }
 .hideFlash{
-	-webkit-animation:hiding 1s;
-	animation:hiding 1s;
+	-webkit-animation:hiding 2s;
+	animation:hiding 2s;
 }
 .background3{
 	width: 100vw;
@@ -751,20 +755,29 @@ html , body{
 }
 .SCUT{
 	position: absolute;
-	width: 14vw;
-	height: 14vw;
-	top: 77vh;
-	left: 5vw;
+	width: 8vw;
+	height: 8vw;
+	bottom: 5vw;
+	left: 2vw;
 	background: url(img/SCUT.png) no-repeat;
 	background-size: cover;
 }
 .BBT{
 	position: absolute;
-	width: 13vw;
-    height: 24vw;
-    top: 76vh;
-    left: 10vw;
+	width: 8vw;
+    height: 12vw;
+	bottom: 2vw;
+    left: 13vw;
 	background: url(img/BBT.png) no-repeat;
+	background-size: contain;
+}
+.Teen{
+	position: absolute;
+	width: 8vw;
+    height: 8vw;
+	bottom: 5vw;
+    left: 24vw;
+	background: url(img/Teen.png) no-repeat;
 	background-size: contain;
 }
 .titleBox{
@@ -802,23 +815,27 @@ html , body{
     padding-right: 10vw;
     padding-bottom: 15vw;
     padding-top: 15vw;
-    font-size: 3vw;
+    font-size: 4vw;
     font-weight: bold;
     text-align: center;
     line-height: 9vw;
 }
 .buttonForFlagFlash{
-	-webkit-animation:showing 2s;
-	animation:showing 2s;
+	-webkit-animation:showing 4.5s;
+	animation:showing 4.5s;
 }
 .title3{
 	position: absolute;
-    right: 0vw;
+    right: 2vw;
     top: 72vh;
     background: url(img/title3.png) no-repeat;
     width: 80vw;
     height: 20vw;
     background-size: contain;
+}
+.title3Flash{
+	-webkit-animation:showing 1.5s;
+	animation:showing 1.5s;
 }
 @-webkit-keyframes load3 {
 	0% {

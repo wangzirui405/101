@@ -16,19 +16,25 @@
 			<div class="title1"></div>
 			<div class="speakOfMao1"></div>
 			<div class="slide"></div>
+			<div class="BBT"></div>
+			<div class="SCUT"></div>
+			<div class="Teen"></div>
 		</div>
 	</div>
 	<div class="box box2 hide">
 		<div class="background2">
-			<div class="speakBackground"></div>
-			<div class="speakOfMao2"></div>
+			<div class="speakBackground hide"></div>
+			<div class="speakOfMao2 hide"></div>
 			<div class="flagpole"></div>
 			<div class="soilders"></div>
 			<div class="flag"></div>
-			<div class="mao"></div>
-			<div class="buttonForFlag hide" onclick="flagUp();">我为祖国助力</div>
+			<div class="mao hide"></div>
+			<div class="buttonForFlag" onclick="flagUp();">点击升旗</div>
 			<div class="title3 hide"></div>
 			<div class="slide"></div>
+			<div class="BBT"></div>
+			<div class="SCUT"></div>
+			<div class="Teen"></div>
 		</div>
 	</div>
 	<div class="box box3 hide">
@@ -45,6 +51,9 @@
 			</div>
 			<div class="dream"></div>
 			<div class="slide"></div>
+			<div class="BBT"></div>
+			<div class="SCUT"></div>
+			<div class="Teen"></div>
 		</div>
 	</div>
 	<div class="box box4 hide">
@@ -78,6 +87,9 @@
 				<textarea id="textWrite" class="text" maxlength="120"></textarea>
 				<div class="hideWriting" onclick="hideWriting();"></div>
 			</div>
+			<div class="BBT" style="bottom: 32vw;"></div>
+			<div class="SCUT" style="bottom: 32vw;"></div>
+			<div class="Teen" style="bottom: 32vw;"></div>
 		</div>
 		<div class="tips" onclick="tips();">左右滑动切换不同模板<br/><br/><br/><span style="border: 1px #fff solid;padding: 5px;">好的，我知道啦</span></div>
 	</div>
@@ -115,7 +127,7 @@
 		'background1.jpg','title1.png','speakOfMao1.png','slide.png',
 		'background2.jpg','mao.png','speakOfMao2.png','slide.png','speakBackground.png','flagpole.png','flag.png','soilders.png','title3.png','buttonForFlag.png',
 		'background4.jpg','xi.png','dream.png','slide.png','cloud1.png','cloud2.png','cloud3.png','cloud4.png','cloudNext.png','sidecurtain.png','upcurtain.png',
-		'backgroundM1.jpg','changeM1.png','making1.png','finish1.png','letter1.jpg','mailFront1.png','mailHead1.png','picture1.png','mailBackDown1.png','backgroundM2.jpg','changeM2.png','making2.png','finish2.png','letter2.jpg','mailFront2.png','mailHead2.png','picture2.png','mailBackDown2.png'
+		'backgroundM1.jpg','changeM1.png','making1.png','finish1.png','letter1.jpg','mailFront1.png','mailHead1.png','picture1.png','mailBackDown1.png','backgroundM2.jpg','changeM2.png','making2.png','finish2.png','letter2.jpg','mailFront2.png','mailHead2.png','picture2.png','mailBackDown2.png','SCUT.png','BBT.png','Teen.png'
 	]
 	var textM = [
 		'今天是您的70岁生日，国旗升旗的那一刻，我的心情是无比激动，这份自豪和感动深深地融入在我的血液之中，同时我也想对您说，祖国母亲，我爱你！','每当我站在冉冉升起的国旗下，我的心就无法平静，正是您给予了我们奋进的力量，祝祖国母亲70岁快乐！'
@@ -233,6 +245,13 @@
 	function flagUp(){
 		$('.flag').removeClass('flagpoleFlash').addClass('flagFlash');
 		$('.flagpole').removeClass('flagpoleFlash');
+		$('.mao').removeClass('hide').addClass('maoFlash');
+		$('.speakBackground').removeClass('hide').addClass('speakBackgroundFlash');
+		$('.speakOfMao2').removeClass('hide').addClass('speakOfMao2Flash');
+		$('.buttonForFlag').removeClass('buttonForFlagFlash').addClass('hideFlash');
+		setTimeout(function(){
+			$(".buttonForFlag").addClass('hide');
+		},2000);
 		setTimeout(function(){
 			$(".flag").attr('style', 'margin-top:-40vw;')
 		},4000);
@@ -363,28 +382,19 @@
 				$('.pictureLoad').addClass('hide');
 			break
 			case 2 :
-				$('.mao').addClass('maoFlash');
-				$('.speakBackground').addClass('speakBackgroundFlash');
-				$('.speakOfMao2').addClass('speakOfMao2Flash');
 				$('.flagpole').addClass('flagpoleFlash');
-				$('.soilders').addClass('flagpoleFlash');
+				$('.soilders').addClass('soildersFlash');
 				$('.flag').removeClass('flagFlash').addClass('flagpoleFlash');
+				$('.buttonForFlag').addClass('buttonForFlagFlash');
 				$('.slide').addClass('slideFlash');
 				$('.pictureLoad').addClass('hide');
 				setTimeout(function(){
-					$('.mao').removeClass('maoFlash').addClass('hideFlash');
-					$('.speakBackground').removeClass('speakBackgroundFlash').addClass('hideFlash');
-					$('.speakOfMao2').removeClass('speakOfMao2Flash').addClass('hideFlash');
-					$('.soilders').removeClass('flagpoleFlash').addClass('hideFlash');
-					$('.buttonForFlag').removeClass('hide').addClass('buttonForFlagFlash');
-					$('.title3').removeClass('hide').addClass('buttonForFlagFlash');
+					$('.soilders').removeClass('soildersFlash').addClass('hideFlash');
+					$('.title3').removeClass('hide').addClass('title3Flash');
 					setTimeout(function(){
-						$('.mao').addClass('hide');
-						$('.speakBackground').addClass('hide');
-						$('.speakOfMao2').addClass('hide');
 						$('.soilders').addClass('hide');
 					},1000);
-				},6000);
+				},3000);
 			break
 			case 3 :
 				$('.xi').addClass('xiFlash');

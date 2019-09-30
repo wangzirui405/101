@@ -21,10 +21,9 @@
         </div>
         <div class="mailFront"></div>
         <div class="QRcode"></div>
-        <div class="BBT"></div>
-        <div class="titleBox">
-           <div class="title2">我是第<span id="number" class="number">99</span>位华工青年，我为祖国庆生</div>
-        </div>
+        <div class="BBT" style="bottom: 32vw;"></div>
+        <div class="SCUT" style="bottom: 32vw;"></div>
+        <div class="Teen" style="bottom: 32vw;"></div>
     </div>
     <div id="pictureGet" class="pictureGet">
         <div class="pictureLoad">
@@ -105,6 +104,16 @@
         imgs.push((function () {
             let img = new Image()
             img.src = 'img/BBT.png'
+            return img
+        })())
+        imgs.push((function () {
+            let img = new Image()
+            img.src = 'img/SCUT.png'
+            return img
+        })())
+        imgs.push((function () {
+            let img = new Image()
+            img.src = 'img/Teen.png'
             return img
         })())
         // console.log(imgs)
