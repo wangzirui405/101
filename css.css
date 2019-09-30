@@ -180,8 +180,8 @@ html , body{
 	background-size: contain;
 }
 .flagpoleFlash{
-	-webkit-animation:showing 3s;
-	animation:showing 3s;
+	-webkit-animation:showing 2s;
+	animation:showing 2s;
 }
 .soilders{
 	position: absolute;
@@ -193,8 +193,8 @@ html , body{
 	background-size: contain;
 }
 .soildersFlash{
-	-webkit-animation:showing 2s;
-	animation:showing 2s;
+	-webkit-animation:showing 3s;
+	animation:showing 3s;
 }
 .flag{
 	position: absolute;
@@ -805,7 +805,7 @@ html , body{
 .buttonForFlag{
 	position: absolute;
     right: 30vw;
-    top: 52vh;
+    top: 56vh;
     background: url(img/buttonForFlag.png) no-repeat;
     width: 20vw;
     height: 10vw;
@@ -827,7 +827,7 @@ html , body{
 .title3{
 	position: absolute;
     right: 2vw;
-    top: 72vh;
+    top: 78vh;
     background: url(img/title3.png) no-repeat;
     width: 80vw;
     height: 20vw;
