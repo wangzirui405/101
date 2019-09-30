@@ -805,7 +805,7 @@ html , body{
 .buttonForFlag{
 	position: absolute;
     right: 30vw;
-    top: 56vh;
+    top: 54vh;
     background: url(img/buttonForFlag.png) no-repeat;
     width: 20vw;
     height: 10vw;
